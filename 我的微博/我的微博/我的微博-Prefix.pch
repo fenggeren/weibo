@@ -1,0 +1,109 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#import "UIImage+Suit.h"
+#import "UIView+Frame.h"
+#import "UIBarButtonItem+Extension.h"
+
+// 判断是否是大于7.0版本
+#define iOS7 ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0)
+
+// navigation标题的字体
+#define NavigationTitleFont [UIFont boldSystemFontOfSize:20]
+
+/** 三原色祖曾的颜色 */
+#define FColor(r, g, b) [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:1.0]
+
+/** 所有的tableView背景色 */
+#define FTableViewBackgroundColor FColor(211, 211, 211)
+
+/** 随机颜色 */
+#define FRandColor FColor(arc4random_uniform(255), arc4random_uniform(255), arc4random_uniform(255))
+
+#ifdef DEBUG
+#define FLog(...) NSLog(__VA_ARGS__)
+#else
+#define FLog(...)
+#endif
+
+/** 表情相关 */
+// 表情的最大行数
+#define kEmotionMaxRows 3
+// 表情的最大列数
+#define kEmotionMaxCols 7
+// 每页最多显示多少个表情
+#define kEmotionMaxCountPerPage (kEmotionMaxRows * kEmotionMaxCols - 1)
+
+
+
+/** 微博正文富文本，@ ## http 三种特殊 */
+#define FAttributedStringOfStatus  @"link"
+
+
+// 屏幕宽
+#define FScreenWidth [UIScreen mainScreen].applicationFrame.size.width
+
+// Cell内 各个子控件的 间隔
+#define FContentOfCellInset 10
+
+// Cell之间的间距
+#define FCellMargin 10
+
+
+// 微博昵称 字体
+#define FNameOfStatusFont [UIFont systemFontOfSize:14]
+// 微博正文字体
+#define FTextOfStatusFont [UIFont systemFontOfSize:14]
+// 微博发表时间字体
+#define FTimeOfStatusFont [UIFont systemFontOfSize:12]
+// 微博发表来源
+#define FSourceOfStatusFont FTimeOfStatusFont
+// 转发微博昵称字体
+#define FNameOfRetweetedStatusFont [UIFont systemFontOfSize:14]
+// 转发微博正文字体
+#define FTextOfRetweetedStatusFont [UIFont systemFontOfSize:14]
+
+/** 键盘，选中表情，发送通知 */
+#define FEmotionDidSelectedNotification @"FEmotionDidSelectedNotification"
+/** 用于从通知中，取出表情的key */
+#define FEmotionDidSelectedKey @"FEmotionDidSelectedKey"
+
+/** 键盘， 删除表情通知 */
+#define FEmotionDidDeleteNotification @"FEmotionDidDeleteNotification"
+//#define FEmotionDidDeleteKey @"FEmotionDidDeleteKey"
+
+/** 微博正文的 点击到特殊字段 发送通知 */
+#define FAttributeTextDidSelectedNotification @"FAttributeTextDidSelectedNotification"
+/** 点击到特殊字段的 属性key */
+#define FAttributeTextDidSelectedKey @"FAttributeTextDidSelectedKey"
+
+#endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

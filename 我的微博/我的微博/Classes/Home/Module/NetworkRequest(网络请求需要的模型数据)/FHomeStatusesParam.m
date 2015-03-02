@@ -1,0 +1,18 @@
+//
+//  FHomeStatusesParam.m
+//  我的微博
+//
+//  Created by fenggeren on 15/2/1.
+//  Copyright (c) 2015年 fenggeren. All rights reserved.
+//
+
+#import "FHomeStatusesParam.h"
+
+@implementation FHomeStatusesParam
+
+- (NSString *)count
+{
+    return _count ? _count : @"20";
+}
+
+@end
